@@ -37,7 +37,6 @@ export function AuthGate() {
 
         const unsubscribePromise = checkTokenAndLogin();
 
-        // Повертаємо функцію для відписки від auth listener
         return () => {
             unsubscribePromise.then((unsubscribe) => {
                 if (typeof unsubscribe === 'function') {
